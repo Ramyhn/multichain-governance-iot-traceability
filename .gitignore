@@ -40,3 +40,4 @@ ethereum-contract/lib/
 
 # Logs
 *.log
+!results/connectivity_measured.csv

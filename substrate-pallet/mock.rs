@@ -4,8 +4,9 @@ use crate as pallet_supply_chain_traceability;
 use core::time::Duration;
 use frame_support::{
     derive_impl,
-    traits::{ConstU64, UnixTime},
+    traits::{Get, UnixTime},
 };
+use std::sync::atomic::{AtomicU64, Ordering};
 use sp_runtime::BuildStorage;
 
 type Block = frame_system::mocking::MockBlock<Test>;
@@ -30,10 +31,20 @@ impl UnixTime for MockTime {
     }
 }
 
+/// Freshness window that tests can set at runtime. Defaults to the benchmark
+/// value so the existing benchmarks are unaffected.
+pub static FRESHNESS_WINDOW: AtomicU64 = AtomicU64::new(2_000_000);
+pub struct SettableWindow;
+impl Get<u64> for SettableWindow {
+    fn get() -> u64 {
+        FRESHNESS_WINDOW.load(Ordering::Relaxed)
+    }
+}
+
 impl pallet_supply_chain_traceability::Config for Test {
     type RuntimeEvent = RuntimeEvent;
     type TimeProvider = MockTime;
-    type TimestampFreshnessWindow = ConstU64<2_000_000>;
+    type TimestampFreshnessWindow = SettableWindow;
 }
 
 pub fn new_test_ext() -> sp_io::TestExternalities {
