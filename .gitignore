@@ -41,3 +41,4 @@ ethereum-contract/lib/
 # Logs
 *.log
 !results/connectivity_measured.csv
+!results/partition_gas_measured.csv
