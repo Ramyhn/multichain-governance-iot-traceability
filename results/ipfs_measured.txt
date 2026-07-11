@@ -1,0 +1,7 @@
+IPFS_RESULT ipfs_version 0.42.0
+IPFS_RESULT content_addressing_deterministic True
+IPFS_RESULT roundtrip_byte_identical 64/64
+IPFS_RESULT tamper_changes_cid True
+IPFS_RESULT fetched_payload_merkle_inclusion_ok True
+IPFS_RESULT tampered_payload_rejected True
+IPFS_RESULT sample_cid QmVneNxBrTChyXodXqHm9sUYDRzf1Qy7XyhJMTutavuSVB
