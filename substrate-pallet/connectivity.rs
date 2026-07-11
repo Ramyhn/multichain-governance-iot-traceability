@@ -22,7 +22,7 @@ use std::sync::atomic::Ordering;
 const NOW: u64 = 1_000_000; // MockTime::now() in seconds
 const EMIT_INTERVAL: u64 = 300; // one signed reading every 5 minutes
 const MEAN_ON: f64 = 900.0; // mean 15-minute connected period
-const READINGS: usize = 600; // readings per sweep point
+const READINGS: usize = 1500; // readings per sweep point
 const CALLER: u64 = 1;
 
 /// Small deterministic xorshift64 RNG (avoids adding a dev-dependency).
