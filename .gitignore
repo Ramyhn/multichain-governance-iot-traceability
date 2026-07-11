@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# Foundry / Ethereum
+out/
+cache/
+node_modules/
+broadcast/
+
+# Generated files
+workload-generator/agricultural_scenario_1152_events.json
+results/*
+!results/substrate_weights.csv
+tables/
+figures/
+
+# Foundry dependencies (run: forge install foundry-rs/forge-std)
+ethereum-contract/lib/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
