@@ -62,7 +62,7 @@ def main() -> None:
     ax1.set_xlabel("Time (minutes)")
     ax1.set_ylabel("Anchoring staleness (minutes)")
     ax1.set_ylim(0, max(s) * 1.25)
-    ax1.set_title("(a) Recovery over a 30-min partition (modeled)")
+    ax1.set_title("(a)", loc="left")
     ax1.legend(loc="upper right")
 
     # (b) measured constant anchoring gas
@@ -72,7 +72,7 @@ def main() -> None:
     ax2.set_xlabel("Backlog cleared by one anchor (events)")
     ax2.set_ylabel("Anchoring gas (thousands)")
     ax2.set_ylim(0, max(gy) * 1.6)
-    ax2.set_title("(b) One anchor, any backlog: constant gas (measured)")
+    ax2.set_title("(b)", loc="left")
     ax2.legend(loc="lower left")
 
     fig.tight_layout()

@@ -56,7 +56,7 @@ def main() -> None:
     ax.set_xlabel("Mean connectivity outage (minutes)")
     ax.set_ylabel("Readings admitted within freshness window (%)")
     ax.set_ylim(0, 103)
-    ax.set_title("Edge store-and-forward: measured on the pallet vs. model")
+    # no title; the figure caption describes the plot
     ax.legend(loc="lower left", ncol=2)
     fig.tight_layout()
     fig.savefig(out, dpi=300, bbox_inches="tight")

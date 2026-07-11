@@ -114,7 +114,7 @@ def exp_partition(outdir: Path) -> dict:
     ax1.legend([span_proxy, l_stale, l_back],
                ["Partition", "Anchoring staleness", "Un-anchored events"],
                loc="upper right")
-    ax1.set_title("Anchoring recovery after an operational-to-analytics partition")
+    # no title; the figure caption describes the plot
     _save(fig, outdir, "robustness_partition")
     return {"partition_min": p_dur, "peak_staleness_min": round(peak_stale, 1),
             "recovery_min": round(recovery_time or 0.0, 2),
@@ -141,7 +141,7 @@ def exp_churn(outdir: Path) -> dict:
     ax.set_xlabel("Validator unavailability / churn (%)")
     ax.set_ylabel("Blocks finalized (liveness, %)")
     ax.set_ylim(0, 103)
-    ax.set_title("GRANDPA liveness under validator churn")
+    # no title; the figure caption describes the plot
     ax.legend(loc="lower left")
     # summary: liveness at the 30% churn point for N=31
     live31_30 = _finalize_prob(31, 0.30) * 100
@@ -181,7 +181,7 @@ def exp_connectivity(outdir: Path) -> dict:
     ax.set_xlabel("Mean connectivity outage (minutes)")
     ax.set_ylabel("Readings admitted within freshness window (%)")
     ax.set_ylim(0, 103)
-    ax.set_title("Edge store-and-forward under intermittent connectivity")
+    # no title; the figure caption describes the plot
     ax.legend(loc="lower left")
     _save(fig, outdir, "robustness_connectivity")
     return summary
@@ -213,7 +213,7 @@ def exp_ipfs(outdir: Path) -> dict:
     ax.set_xlabel("Replication factor (independent pins / gateways)")
     ax.set_ylabel("Retrieval success (%)")
     ax.set_ylim(0, 103)
-    ax.set_title("Verification retrieval under partial IPFS availability")
+    # no title; the figure caption describes the plot
     ax.legend(loc="lower right", ncol=2)
     _save(fig, outdir, "robustness_ipfs")
     return summary
