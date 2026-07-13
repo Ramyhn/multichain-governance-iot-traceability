@@ -10,6 +10,7 @@ Experimental implementation of the multichain architecture described in "A Gover
 ├── workload-generator/     # Synthetic event generation (Python)
 ├── analysis/               # Result processing (Python)
 ├── simulation/             # Deployment-robustness study (Python)
+├── formal-model/           # Automata model + safety/liveness verification (Python + UPPAAL)
 ├── runtime/                # Substrate runtime for weight benchmarking
 ├── results/                # Measured pallet weights
 └── README.md               # This file
