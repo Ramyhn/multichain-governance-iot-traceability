@@ -11,7 +11,7 @@
 ### 1. Clone Repository
 
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/Ramyhn/multichain-governance-iot-traceability
 cd multichain-prototype
 ```
 
