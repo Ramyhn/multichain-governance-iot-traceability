@@ -8,7 +8,7 @@ pragma solidity ^0.8.20;
  * 
  * Gas measurement:
  * - Foundry gas report for anchorReconciliation: 275,446 gas
- * - Cost at 25 gwei, $2,000 ETH/USD: ~$13.77
+ * - Cost at 0.5 gwei, $2,000 ETH/USD: ~$0.28
  */
 contract SupplyChainAnchoring {
     

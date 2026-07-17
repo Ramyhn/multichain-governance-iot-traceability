@@ -9,7 +9,7 @@ from typing import Dict, Any
 
 
 class AnalyticalModel:
-    """Cost constants from the Section VIII analytical model."""
+    """Cost constants from the Section 9 analytical model."""
     
     WEIGHT_PER_REGISTRATION = 200_000
     WEIGHT_PER_EVENT = 150_000
@@ -27,7 +27,7 @@ class AnalyticalModel:
     
     GAS_BASE = 21_000
     GAS_STORAGE_PER_WORD = 20_000
-    GAS_PRICE_GWEI = 25
+    GAS_PRICE_GWEI = 0.5
     ETH_USD = 2000
     
     @classmethod
@@ -355,7 +355,7 @@ def main():
     print("="*60)
     print(f"Tables: {tables_dir}/")
     print(f"Figures: {figures_dir}/")
-    print("\nInsert these into your LaTeX document Section VIII")
+    print("\nInsert these into your LaTeX document Section 9")
     print("="*60 + "\n")
 
 if __name__ == "__main__":

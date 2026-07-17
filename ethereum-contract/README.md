@@ -24,4 +24,4 @@ The contract stores one reconciliation record per Merkle root and rejects duplic
 The paper scenario anchors one 1,152-event reconciliation window from the Substrate operational chain. The current Foundry gas report is:
 
 - `anchorReconciliation`: 275,446 gas
-- Cost at 25 gwei and $2,000 ETH: about $13.77 per anchoring
+- Cost at 0.5 gwei and $2,000 ETH: about $0.28 per anchoring

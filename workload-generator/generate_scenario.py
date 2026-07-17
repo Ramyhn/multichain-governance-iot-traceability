@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Supply Chain Workload Generator
-Generates synthetic IoT events for the agricultural traceability scenario (Section VII)
+Generates synthetic IoT events for the agricultural traceability scenario (Section 8)
 
 Scenario: Farm → Logistics → Retailer → Regulator
 - 5 devices (3 farm sensors, 2 transport sensors)
@@ -148,7 +148,7 @@ class IoTDevice:
         )
 
 class AgriculturalScenarioGenerator:
-    """Generates the complete agricultural traceability scenario from Section VII"""
+    """Generates the complete agricultural traceability scenario from Section 8"""
     
     def __init__(self, seed: int = DEFAULT_SEED, start_time: int = DEFAULT_START_TIME):
         self.seed = seed
@@ -262,7 +262,7 @@ class AgriculturalScenarioGenerator:
         
         scenario = {
             "metadata": {
-                "scenario": "Agricultural Traceability (Section VII)",
+                "scenario": "Agricultural Traceability (Section 8)",
                 "total_devices": len(self.devices),
                 "start_time": self.start_time,
                 "seed": self.seed,
@@ -337,7 +337,7 @@ def build_merkle_tree(events: List[Dict[str, Any]]) -> str:
     return current_level[0]
 
 def analyze_costs(scenario: Dict[str, Any]):
-    """Compute costs based on analytical model from Section VIII"""
+    """Compute costs based on analytical model from Section 9"""
     
     # Operational-chain fee assumptions from the paper's analytical model.
     WEIGHT_PER_REGISTRATION = 200_000
@@ -354,7 +354,7 @@ def analyze_costs(scenario: Dict[str, Any]):
     
     # Foundry gas report for SupplyChainAnchoring.anchorReconciliation.
     GAS_PER_ANCHOR = 275_446
-    GAS_PRICE_GWEI = 25
+    GAS_PRICE_GWEI = 0.5
     ETH_USD = 2000
     
     num_devices = len(scenario["credentials"])
@@ -382,7 +382,7 @@ def analyze_costs(scenario: Dict[str, Any]):
     total_cost = operational_total + eth_cost
     
     print(f"\n{'='*60}")
-    print(f"COST ANALYSIS (Analytical Model from Section VIII)")
+    print(f"COST ANALYSIS (Analytical Model from Section 9)")
     print(f"{'='*60}")
     print(f"Operational Chain (Substrate):")
     print(f"  Device registrations: ${device_cost:.4f} ({num_devices} devices)")
@@ -419,7 +419,7 @@ def main():
 
     print("="*60)
     print("Supply Chain Workload Generator")
-    print("Agricultural Traceability Scenario (Section VII)")
+    print("Agricultural Traceability Scenario (Section 8)")
     print("="*60 + "\n")
     
     generator = AgriculturalScenarioGenerator(seed=args.seed, start_time=args.start_time)

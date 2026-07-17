@@ -10,7 +10,6 @@ Experimental implementation of the multichain architecture described in "A Gover
 ├── workload-generator/     # Synthetic event generation (Python)
 ├── analysis/               # Result processing (Python)
 ├── simulation/             # Deployment-robustness study (Python)
-├── formal-model/           # Automata model + safety/liveness verification (Python + UPPAAL)
 ├── runtime/                # Substrate runtime for weight benchmarking
 ├── results/                # Measured pallet weights
 └── README.md               # This file
@@ -25,7 +24,7 @@ Implements Algorithms 1-3 from the paper:
 - IoT event processing with replay attack prevention
 - Governance evaluation with finite state machine
 
-**File:** `substrate-pallet/lib.rs` (443 lines)
+**File:** `substrate-pallet/lib.rs` (461 lines)
 **Language:** Rust (FRAME)
 **Requirements:** Substrate 3.0+
 
@@ -42,7 +41,7 @@ Implements Algorithm 4:
 
 ### Workload Generator
 
-Generates agricultural scenario from paper Section VII:
+Generates agricultural scenario from paper Section 8:
 - 5 Ed25519-signed IoT devices
 - 1,152 sensor events (temperature, humidity, GPS)
 - 2 custody-transfer records
@@ -84,8 +83,8 @@ Expected gas report: 275,446 gas for `anchorReconciliation`
 | Events generated | 1,152 |
 | Devices | 5 |
 | Gas consumption | 275,446 |
-| Cost per batch (25 gwei, $2,000 ETH) | $13.78 |
-| Cost per event | $0.012 |
+| Cost per batch (0.5 gwei, $2,000 ETH) | $0.28 |
+| Cost per event | $0.00024 |
 
 ## Validation
 
